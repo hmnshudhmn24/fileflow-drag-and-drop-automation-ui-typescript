@@ -1,68 +1,132 @@
 # 📁 FileFlow: Drag-and-Drop File Automation UI
 
-FileFlow is a Zapier-style automation tool designed to let users visually create workflows that automate file-related tasks with cloud storage services like Dropbox, Google Drive, and AWS S3.
+## Overview
 
-## 🚀 Features
+FileFlow is a Zapier-like drag-and-drop interface to create and manage workflows that perform file automation tasks. Users can visually create flows connecting services like Dropbox, Google Drive, and Amazon S3 to automate common file tasks (uploading, moving, renaming, converting, etc.).
 
-- Drag-and-drop visual workflow builder (powered by React Flow)
-- Integration with Dropbox, Google Drive, and Amazon S3
-- File upload, download, move, and delete actions
-- Background job runner for long-running workflows
-- WebSocket live updates for workflow status
-
-## 🛠 Tech Stack
-
-- **Frontend:** React, TypeScript, Tailwind CSS, React Flow
-- **Backend:** Node.js, Express, TypeScript, BullMQ
-- **Database:** Redis (for job queue), PostgreSQL (for logs)
+Built with:
+- **Frontend**: React + TypeScript + React Flow
+- **Backend**: Node.js + Express + TypeScript
+- **Storage**: MongoDB
+- **Integrations**: Dropbox API, Google Drive API, AWS SDK
 
 
 
-## 📦 Installation
+## ✨ Features
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/fileflow-drag-and-drop-automation-ui-typescript.git
-cd fileflow-drag-and-drop-automation-ui-typescript
-```
-
-### 2. Setup Backend
-
-```bash
-cd server
-npm install
-cp .env.example .env
-# Add your API keys and DB configs in the .env file
-npx prisma generate
-npm run dev
-```
-
-### 3. Setup Frontend
-
-```bash
-cd client
-npm install
-npm run dev
-```
-
-> The client runs on `http://localhost:5173` and the server on `http://localhost:5000`
+- Drag-and-drop workflow builder using React Flow
+- Authenticated integration with Dropbox, Google Drive, and AWS S3
+- Run background jobs for file processing
+- Save workflows to MongoDB
+- Visual logs and history
 
 
 
-## 🧩 Example Workflow
-
-1. Upload a file to Dropbox → Convert format → Save to Google Drive
-2. Monitor folder on Google Drive → Auto-download to S3
-
-
-
-## 📁 Project Structure
+## 📁 Folder Structure
 
 ```
-fileflow/
-├── client/       # React frontend with React Flow
-├── server/       # Express backend with workflow runner
+fileflow-automation-ui/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── index.ts
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   └── package.json
+├── .env
 └── README.md
 ```
 
+
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- MongoDB
+
+
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/fileflow-automation-ui.git
+cd fileflow-automation-ui
+```
+
+
+
+### 2. Setup Backend
+```bash
+cd backend
+npm install
+```
+
+#### Environment Variables (`.env`)
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/fileflow
+DROPBOX_CLIENT_ID=your_client_id
+DROPBOX_SECRET=your_secret
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+AWS_ACCESS_KEY_ID=...
+AWS_SECRET_ACCESS_KEY=...
+```
+
+#### Start Backend
+```bash
+npm run dev
+```
+
+
+
+### 3. Setup Frontend
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+
+Open browser at: `http://localhost:5173`
+
+
+
+## 🧠 Example Workflow
+- Upload a file to Google Drive
+- Convert to PDF using built-in plugin
+- Move to Dropbox folder automatically
+
+
+
+## 🧩 Technologies
+- React Flow (Workflow Editor)
+- OAuth2 (Dropbox, Google)
+- AWS SDK (S3 file ops)
+- Background Jobs (BullMQ or node-cron)
+
+  
+
+
+## 🔐 Authentication
+OAuth2 flows handled in backend using Passport.js strategies per provider.
+Frontend pops auth window, backend handles token storage.
+
+
+
+## 🔧 TODOs
+- Add OneDrive integration
+- Add file format converters
+- Add email notifications for job failures
+
+
+
+## 👨‍💻 Contributing
+Pull requests welcome! Please include test coverage and follow Prettier formatting.
