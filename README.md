@@ -2,7 +2,7 @@
 
 ## Overview
 
-FileFlow is a Zapier-like drag-and-drop interface to create and manage workflows that perform file automation tasks. Users can visually create flows connecting services like Dropbox, Google Drive, and Amazon S3 to automate common file tasks (uploading, moving, renaming, converting, etc.).
+FileFlow is a visual workflow automation tool inspired by Zapier, built specifically for file operations and cloud storage tasks. With an intuitive drag-and-drop interface, users can create complex workflows to move, copy, rename, or delete files across platforms like Dropbox, Google Drive, and AWS S3. The backend handles job execution in the background, making it easy to schedule, monitor, and manage file automation at scale.
 
 Built with:
 - **Frontend**: React + TypeScript + React Flow
@@ -126,7 +126,3 @@ Frontend pops auth window, backend handles token storage.
 - Add file format converters
 - Add email notifications for job failures
 
-
-
-## 👨‍💻 Contributing
-Pull requests welcome! Please include test coverage and follow Prettier formatting.
