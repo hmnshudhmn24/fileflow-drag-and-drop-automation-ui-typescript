@@ -16,7 +16,7 @@ FileFlow is a Zapier-style automation tool designed to let users visually create
 - **Backend:** Node.js, Express, TypeScript, BullMQ
 - **Database:** Redis (for job queue), PostgreSQL (for logs)
 
----
+
 
 ## 📦 Installation
 
@@ -48,14 +48,14 @@ npm run dev
 
 > The client runs on `http://localhost:5173` and the server on `http://localhost:5000`
 
----
+
 
 ## 🧩 Example Workflow
 
 1. Upload a file to Dropbox → Convert format → Save to Google Drive
 2. Monitor folder on Google Drive → Auto-download to S3
 
----
+
 
 ## 📁 Project Structure
 
@@ -66,10 +66,3 @@ fileflow/
 └── README.md
 ```
 
----
-
-## 👤 Author
-
-**You!** Built using OpenAI & ChatGPT
-
----
